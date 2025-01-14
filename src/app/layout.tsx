@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/app/_components/header";
 import { Footer } from "@/app/_components/footer";
 
+
 const cairo = Cairo({
   variable: "--Cairo",
   subsets: ["latin"],

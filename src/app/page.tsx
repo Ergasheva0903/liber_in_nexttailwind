@@ -1,10 +1,11 @@
-import { Ruknlar } from "@/app/_components/ruknlar";
 import Image from "next/image";
-import { NewAdds } from "./_components/new-adds";
 import Security from "../../public/images/security";
 import Delivery from "../../public/images/delivery";
 import Quality from "../../public/images/quality";
 import Top from "../../public/images/top";
+import { Ruknlar } from "@/app/_components/ruknlar";
+import { NewAdds } from "@/app/_components/new_adds";
+import { AudioBooks } from "@/app/_components/audio-books";
 
 export default function Home() {
   return (
@@ -49,7 +50,7 @@ export default function Home() {
       </div>
       <div className='pt-[64px] pb-[93px]'>
         <h1 className='font-semibold text-[32px] leading-[125%] text-[#242424] mb-[32px]'>Аудио китоблар</h1>
-        <NewAdds />
+        <AudioBooks />
       </div>
     </div>
   );

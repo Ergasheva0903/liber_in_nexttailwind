@@ -4,6 +4,7 @@ import Star from '../../../public/images/star';
 import Headphone from '../../../public/images/headphone';
 import Book from '../../../public/images/book';
 
+
 interface DataT {
     id: number;
     img: string;
@@ -11,16 +12,18 @@ interface DataT {
     author: string;
 };
 
-export const AudioBooks = async () => {
-    const data = await fetchWrapper<DataT[]>("/books", {
-        next: { tags: ["/books"] },
+export const NewAdds = async () => {
+
+    const data = await fetchWrapper<DataT[]>("/newBooks", {
+        next: { tags: ["/newBooks"] },
     });
+
     return (
         <div className='flex gap-[24px]'>
             {data.map((item) => {
-                return <div className="">
+                return <div key={item.id}>
                     <img className="w-[239px] rounded-[14px] mb-[18px] h-[336px]" src={item.img} alt="img" />
-                    <h3 className='text-[#11142d] font-bold text-[20px]' key={item.id}>{item.title}</h3>
+                    <h3 className='text-[#11142d] font-bold text-[20px]'>{item.title}</h3>
                     <p className='text-[#3f51b5] text-[14px] mb-[16px]'>{item.author}</p>
                     <div>
                         <div className="flex items-center justify-between">
@@ -38,6 +41,8 @@ export const AudioBooks = async () => {
                 </div>
             })}
         </div>
+
     )
 }
+
 
